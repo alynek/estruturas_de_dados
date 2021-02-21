@@ -18,7 +18,7 @@ namespace List
             //Testando o método Adiciona
             lista.Adiciona(a1);
             lista.Adiciona(a2);
-            lista.Imprime();
+            System.Console.WriteLine(lista.Imprime());
 
             //Testando o método Contem
             System.Console.WriteLine(lista.Contem(a1));

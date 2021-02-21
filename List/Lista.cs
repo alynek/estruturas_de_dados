@@ -46,11 +46,11 @@ namespace List
             return Total;
         }
 
-        public void Imprime()
+        public string Imprime()
         {
             if(Total == 0)
             {
-                Console.WriteLine("[]");
+                return "[]";
             }
 
             StringBuilder builder = new StringBuilder();
@@ -64,7 +64,7 @@ namespace List
             
             builder.Append(ListaGenerica[Total - 1]);
             builder.Append("]");
-            Console.WriteLine(builder.ToString());
+            return builder.ToString();
         }
     }
 }
