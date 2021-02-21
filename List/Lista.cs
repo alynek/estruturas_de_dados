@@ -31,6 +31,13 @@ namespace List
 
         public bool Contem(T item)
         {
+            for(int i = 0; i < Total; i++)
+            {
+                if(item.Equals(ListaGenerica[i]))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
