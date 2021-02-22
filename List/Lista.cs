@@ -16,7 +16,22 @@ namespace List
 
         public void Adiciona(T item, int posicao)
         {
+            if (!PosicaoValida(posicao))
+            {
+                throw new ArgumentException("Posição inválida");
+            } 
 
+            for (int i = Total - 1; i >= posicao; i--)
+            {
+                ListaGenerica[i + 1] = ListaGenerica[i];
+            }
+            ListaGenerica[posicao] = item;
+            Total++;
+        }
+
+        private bool PosicaoValida(int posicao)
+        {
+            return posicao >= 0 && posicao <= Total;
         }
 
         public T Pega(int posicao)
