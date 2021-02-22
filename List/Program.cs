@@ -15,14 +15,18 @@ namespace List
 
             Lista<Aluno> lista = new Lista<Aluno>();
 
-            //Testando o método Adiciona
             lista.Adiciona(a1);
             lista.Adiciona(a2);
+
             System.Console.WriteLine(lista.Imprime());
 
-            //Testando o método Contem
+            
             System.Console.WriteLine(lista.Contem(a1));
             System.Console.WriteLine(lista.Contem(a3));
+
+            
+            System.Console.WriteLine(lista.Pega(1));
+            //System.Console.WriteLine(lista.Pega(6));
         }
     }
 }

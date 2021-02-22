@@ -21,7 +21,13 @@ namespace List
 
         public T Pega(int posicao)
         {
+            if(!PosicaoOcupada(posicao)) throw new ArgumentException("Posição inválida!");
             return ListaGenerica[posicao];
+        }
+
+        private bool PosicaoOcupada(int posicao)
+        {
+            return posicao >= 0 && posicao < Total;
         }
 
         public void Remove(int posicao)
