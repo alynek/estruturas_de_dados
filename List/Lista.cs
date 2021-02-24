@@ -47,7 +47,12 @@ namespace List
 
         public void Remove(int posicao)
         {
-
+            if(!PosicaoOcupada(posicao)) throw new ArgumentException("Posição inválida!");
+            for(int i = posicao; i < Total -1; i++)
+            {
+                ListaGenerica[i] = ListaGenerica[i + 1];
+            }
+            Total--;
         }
 
         public bool Contem(T item)
