@@ -23,8 +23,9 @@ namespace List
 
             lista.Adiciona(a1);
             lista.Adiciona(a2);
+            lista.Adiciona(a4);
 
-            System.Console.WriteLine(lista.Imprime());
+            System.Console.WriteLine(lista.Imprime()); //Rafael, paulo, susan
 
             
             System.Console.WriteLine(lista.Contem(a1));
@@ -35,12 +36,18 @@ namespace List
             //System.Console.WriteLine(lista.Pega(6));
 
             System.Console.WriteLine(lista.Tamanho());
-            lista.Adiciona(a3, 1);
-            lista.Adiciona(a4, 0);
+            lista.Adiciona(a3, 1); 
+            lista.Adiciona(a5, 0); 
+            lista.Adiciona(a6, 2);
             System.Console.WriteLine(lista.Tamanho());
             System.Console.WriteLine(lista.Imprime());
 
-            lista.Remove(1);
+            lista.Remove(1); 
+            System.Console.WriteLine(lista.Imprime());
+
+            lista.Remove(a4); 
+            System.Console.WriteLine(lista.Imprime());
+            lista.Remove(a5);
             System.Console.WriteLine(lista.Imprime());
         }
     }

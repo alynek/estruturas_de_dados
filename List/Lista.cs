@@ -43,7 +43,7 @@ namespace List
                 {
                     novaLista[i] = ListaGenerica[i];
                 }
-                
+
                 ListaGenerica = novaLista;
             }
         }
@@ -67,11 +67,23 @@ namespace List
         public void Remove(int posicao)
         {
             if(!PosicaoOcupada(posicao)) throw new ArgumentException("Posição inválida!");
-            for(int i = posicao; i < Total -1; i++)
+            for(int i = posicao; i < Total - 1; i++)
             {
                 ListaGenerica[i] = ListaGenerica[i + 1];
             }
             Total--;
+        }
+
+        public void Remove(T item)
+        {
+            for(int i = 0; i < Total; i++){
+                if(item.Equals(ListaGenerica[i]))
+                {
+                    Remove(i);
+                    return;
+                }
+            }
+            throw new ArgumentException("Item não existe!");
         }
 
         public bool Contem(T item)
