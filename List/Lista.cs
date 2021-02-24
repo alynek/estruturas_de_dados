@@ -10,6 +10,7 @@ namespace List
 
         public void Adiciona(T item)
         {
+            GarantaEspaco();
             ListaGenerica[Total] = item;
             Total += 1;
         }
@@ -21,12 +22,27 @@ namespace List
                 throw new ArgumentException("Posição inválida");
             } 
 
+            GarantaEspaco();
             for (int i = Total - 1; i >= posicao; i--)
             {
                 ListaGenerica[i + 1] = ListaGenerica[i];
             }
             ListaGenerica[posicao] = item;
             Total++;
+        }
+
+        private void GarantaEspaco()
+        {
+            if(Total == ListaGenerica.Length)
+            {
+                T[] novaLista = new T[ListaGenerica.Length * 2];
+
+                for(int i = 0; i < ListaGenerica.Length; i++)
+                {
+                    novaLista[i] = ListaGenerica[i];
+                }
+                ListaGenerica = novaLista;
+            }
         }
 
         private bool PosicaoValida(int posicao)
