@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\alyne\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alyne\\projetos\\EstruturasDeDados\\List\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\alyne\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

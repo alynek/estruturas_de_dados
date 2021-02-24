@@ -17,16 +17,18 @@ namespace List
 
         public void Adiciona(T item, int posicao)
         {
+            GarantaEspaco();
+
             if (!PosicaoValida(posicao))
             {
                 throw new ArgumentException("Posição inválida");
             } 
 
-            GarantaEspaco();
             for (int i = Total - 1; i >= posicao; i--)
             {
                 ListaGenerica[i + 1] = ListaGenerica[i];
             }
+
             ListaGenerica[posicao] = item;
             Total++;
         }
@@ -41,6 +43,7 @@ namespace List
                 {
                     novaLista[i] = ListaGenerica[i];
                 }
+                
                 ListaGenerica = novaLista;
             }
         }

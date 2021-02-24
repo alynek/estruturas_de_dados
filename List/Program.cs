@@ -39,6 +39,9 @@ namespace List
             lista.Adiciona(a4, 0);
             System.Console.WriteLine(lista.Tamanho());
             System.Console.WriteLine(lista.Imprime());
+
+            lista.Remove(1);
+            System.Console.WriteLine(lista.Imprime());
         }
     }
 }
