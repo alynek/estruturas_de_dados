@@ -3,7 +3,7 @@ using System.Text;
 
 namespace List
 {
-    public class Lista<T>
+    public class Lista<T> where T : class
     {
         private T[] ListaGenerica = new T[100];
         private int Total { get; set; } = 0;
@@ -96,6 +96,12 @@ namespace List
                 }
             }
             return false;
+        }
+
+        public void Limpa()
+        {
+            ListaGenerica = new T[100];
+            Total = 0;
         }
 
         public int Tamanho()
