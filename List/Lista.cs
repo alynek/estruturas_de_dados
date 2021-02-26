@@ -86,6 +86,18 @@ namespace List
             throw new ArgumentException("Item não existe!");
         }
 
+        public int Indice(T item)
+        {
+            for(int i = 0; i < Total; i++)
+            {
+                if(item.Equals(ListaGenerica[i]))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public bool Contem(T item)
         {
             for(int i = 0; i < Total; i++)

@@ -42,7 +42,7 @@ namespace List
             lista.Adiciona(a6, 2);
             Console.WriteLine(lista.Imprime());
             
-            Console.WriteLine(lista.Tamanho());
+            Console.WriteLine("Tamanho: " + lista.Tamanho());
 
             lista.Remove(1); 
             Console.WriteLine(lista.Imprime());
@@ -51,6 +51,8 @@ namespace List
             Console.WriteLine(lista.Imprime());
             lista.Remove(a5);
             Console.WriteLine(lista.Imprime());
+
+            Console.WriteLine("Índice: " + lista.Indice(a5));
 
             lista.Limpa();
             Console.WriteLine(lista.Imprime());
