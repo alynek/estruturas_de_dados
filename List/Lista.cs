@@ -98,6 +98,25 @@ namespace List
             return -1;
         }
 
+        public int UltimoIndice(T item)
+        {
+            int[] vetor = new int[Total];
+            for(int i = 0; i < Total; i++)
+            {
+                if(item.Equals(ListaGenerica[i]))
+                {
+                    vetor[i] += i;
+                }
+            }
+            if(vetor != null)
+            {
+                return vetor[vetor.Length - 1];
+            }
+            else{
+                return -1;
+            }
+        }
+
         public bool Contem(T item)
         {
             for(int i = 0; i < Total; i++)

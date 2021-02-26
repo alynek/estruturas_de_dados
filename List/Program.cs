@@ -54,6 +54,10 @@ namespace List
 
             Console.WriteLine("Índice: " + lista.Indice(a5));
 
+            lista.Adiciona(a6);
+            Console.WriteLine(lista.Imprime());
+            Console.WriteLine("Ultimo índice: " + lista.UltimoIndice(a6));
+
             lista.Limpa();
             Console.WriteLine(lista.Imprime());
         }
