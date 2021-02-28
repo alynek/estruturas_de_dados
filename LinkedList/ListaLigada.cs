@@ -2,8 +2,9 @@ namespace LinkedList
 {
     public class ListaLigada<T> where T : class
     {
-        private Celula<T> Primera;
+        private Celula<T> Primeira;
         private Celula<T> Ultima;
+        private int TotalDeElementos;
 
         public void Adiciona(T elemento)
         {
@@ -17,7 +18,15 @@ namespace LinkedList
 
         public void AdicionaNoComeco(T elemento)
         {
+            Celula<T> novaCelula = new Celula<T>(Primeira, elemento);
+            Primeira = novaCelula;
 
+            if(TotalDeElementos == 0)
+            {
+                Ultima = novaCelula;
+            }
+
+            TotalDeElementos++;
         }
 
         public T Pega(int posicao)
