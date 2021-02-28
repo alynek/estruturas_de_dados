@@ -1,11 +1,11 @@
 namespace LinkedList
 {
-    public class Celula
+    public class Celula<T> where T : class
     {
-        private Celula _proxima{get; set;}
+        private Celula<T> _proxima{get; set;}
         private T _elemento{get;}
 
-        public Celula(Celula proxima, T elemento)
+        public Celula(Celula<T> proxima, T elemento)
         {
             _proxima = proxima;
             _elemento = elemento;
