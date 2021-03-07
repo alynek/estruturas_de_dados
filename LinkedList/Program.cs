@@ -6,7 +6,12 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ListaLigada<String> lista = new ListaLigada<String>();
+
+            lista.AdicionaNoComeco("Gandalf");
+            lista.AdicionaNoComeco("Frodo");
+
+            System.Console.WriteLine(lista.Imprime());
         }
     }
 }
