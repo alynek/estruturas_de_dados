@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alyne\\projetos\\EstruturasDeDados\\LinkedList\\LinkedList.csproj": {}
+    "C:\\Users\\alyne\\projects\\estruturas_de_dados\\LinkedList\\LinkedList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alyne\\projetos\\EstruturasDeDados\\LinkedList\\LinkedList.csproj": {
+    "C:\\Users\\alyne\\projects\\estruturas_de_dados\\LinkedList\\LinkedList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alyne\\projetos\\EstruturasDeDados\\LinkedList\\LinkedList.csproj",
+        "projectUniqueName": "C:\\Users\\alyne\\projects\\estruturas_de_dados\\LinkedList\\LinkedList.csproj",
         "projectName": "LinkedList",
-        "projectPath": "C:\\Users\\alyne\\projetos\\EstruturasDeDados\\LinkedList\\LinkedList.csproj",
+        "projectPath": "C:\\Users\\alyne\\projects\\estruturas_de_dados\\LinkedList\\LinkedList.csproj",
         "packagesPath": "C:\\Users\\alyne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alyne\\projetos\\EstruturasDeDados\\LinkedList\\obj\\",
+        "outputPath": "C:\\Users\\alyne\\projects\\estruturas_de_dados\\LinkedList\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\alyne\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
