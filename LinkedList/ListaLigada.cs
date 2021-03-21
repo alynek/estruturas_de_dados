@@ -11,20 +11,15 @@ namespace LinkedList
 
         public void Adiciona(T elemento)
         {
-            if(TotalDeElementos == 0){
+            if(this.TotalDeElementos == 0){
                 AdicionaNoComeco(elemento);
             }
             else{
                 Celula<T> novaCelula = new Celula<T>(elemento);
                 this.Ultima.Proxima = novaCelula;
                 this.Ultima = novaCelula;
-                TotalDeElementos++;
+                this.TotalDeElementos++;
             }
-        }
-
-        public void Adiciona(int posicao, T elemento)
-        {
-
         }
 
         public void AdicionaNoComeco(T elemento)
@@ -32,12 +27,49 @@ namespace LinkedList
             Celula<T> novaCelula = new Celula<T>(Primeira, elemento);
             this.Primeira = novaCelula;
 
-            if(TotalDeElementos == 0)
+            if(this.TotalDeElementos == 0)
             {
                 this.Ultima = novaCelula;
             }
 
-            TotalDeElementos++;
+            this.TotalDeElementos++;
+        }
+
+        public void Adiciona(int posicao, T elemento)
+        {
+            if(posicao == 0)
+            {
+                AdicionaNoComeco(elemento);
+            }else if(posicao == this.TotalDeElementos)
+            {
+                Adiciona(elemento);
+            }else
+            {
+                Celula<T> anterior = PegaCelulaAnterior(posicao);
+                Celula<T> nova = new Celula<T>(anterior.Proxima, elemento);
+                anterior.Proxima = nova;
+                this.TotalDeElementos++;
+            }
+        }
+
+        private Celula<T> PegaCelulaAnterior(int posicao)
+        {
+            if(!PosicaoOcupada(posicao))
+            {
+                throw new ArgumentException("Posição não existe!");
+            }
+            Celula<T> atual = Primeira;
+
+            for(int i = 0; i < posicao; i++)
+            {
+                atual = atual.Proxima;
+            }
+            return atual;
+        }
+
+        private bool PosicaoOcupada(int posicao)
+        {
+            return posicao >= 0 && posicao < this.TotalDeElementos;
         }
 
         public T Pega(int posicao)
@@ -72,7 +104,7 @@ namespace LinkedList
 
         public string Imprime()
         {
-            if(TotalDeElementos == 0)
+            if(this.TotalDeElementos == 0)
             {
                 return "[]";
             }
@@ -80,7 +112,7 @@ namespace LinkedList
             StringBuilder builder = new StringBuilder("[");
             Celula<T> atual = Primeira;
 
-            for(int i = 0; i < TotalDeElementos - 1; i++)
+            for(int i = 0; i < this.TotalDeElementos - 1; i++)
             {
                 builder.Append(atual.Elemento);
                 builder.Append(", ");
