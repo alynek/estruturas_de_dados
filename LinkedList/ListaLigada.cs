@@ -45,14 +45,14 @@ namespace LinkedList
                 Adiciona(elemento);
             }else
             {
-                Celula<T> anterior = PegaCelulaAnterior(posicao);
+                Celula<T> anterior = PegaCelula(posicao);
                 Celula<T> nova = new Celula<T>(anterior.Proxima, elemento);
                 anterior.Proxima = nova;
                 this.TotalDeElementos++;
             }
         }
 
-        private Celula<T> PegaCelulaAnterior(int posicao)
+        private Celula<T> PegaCelula(int posicao)
         {
             if(!PosicaoOcupada(posicao))
             {
@@ -74,7 +74,7 @@ namespace LinkedList
 
         public T Pega(int posicao)
         {
-            return null;
+            return this.PegaCelula(posicao).Elemento;
         }
 
         public void Remove(int posicao)
