@@ -84,7 +84,16 @@ namespace LinkedList
 
         public void RemoveDoComeco()
         {
+            if(!this.PosicaoOcupada(0)){
+                throw new ArgumentException("Posição não existe");
+            }
 
+            this.Primeira = this.Primeira.Proxima;
+            this.TotalDeElementos --;
+
+            if(this.TotalDeElementos == 0){
+                this.Ultima = null;
+            }
         }
 
         public void RemoveDoFim()
