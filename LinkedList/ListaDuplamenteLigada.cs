@@ -17,6 +17,7 @@ namespace LinkedList
             else{
                 Celula<T> novaCelula = new Celula<T>(elemento);
                 this.Ultima.Proxima = novaCelula;
+                novaCelula.Anterior = this.Ultima;
                 this.Ultima = novaCelula;
                 this.TotalDeElementos++;
             }
@@ -24,12 +25,16 @@ namespace LinkedList
 
         public void AdicionaNoComeco(T elemento)
         {
-            Celula<T> novaCelula = new Celula<T>(Primeira, elemento);
-            this.Primeira = novaCelula;
-
             if(this.TotalDeElementos == 0)
             {
+                Celula<T> novaCelula = new Celula<T>(elemento);
+                this.Primeira = novaCelula;
                 this.Ultima = novaCelula;
+            }else {
+
+                Celula<T> novaCelula = new Celula<T>(Primeira, elemento);
+                this.Primeira.Anterior = novaCelula;
+                this.Primeira = novaCelula;
             }
 
             this.TotalDeElementos++;
@@ -39,15 +44,18 @@ namespace LinkedList
         {
             if(posicao == 0)
             {
-                AdicionaNoComeco(elemento);
+                this.AdicionaNoComeco(elemento);
             }else if(posicao == this.TotalDeElementos)
             {
-                Adiciona(elemento);
+                this.Adiciona(elemento);
             }else
             {
-                Celula<T> anterior = PegaCelula(posicao);
+                Celula<T> anterior = PegaCelula(posicao - 1);
+                Celula<T> proxima = anterior.Proxima;
                 Celula<T> nova = new Celula<T>(anterior.Proxima, elemento);
+                nova.Anterior = anterior;
                 anterior.Proxima = nova;
+                proxima.Anterior = nova;
                 this.TotalDeElementos++;
             }
         }
@@ -85,19 +93,20 @@ namespace LinkedList
 
             if(posicao == 0){
                 this.RemoveDoComeco();
+
             }else if(posicao == this.TotalDeElementos - 1){
                 this.RemoveDoFim();
+                
             }else{
                 Celula<T> atual = this.PegaCelula(posicao - 1);
                 Celula<T> anterior = atual.Anterior;
                 Celula<T> proxima = atual.Proxima;
+
                 anterior.Proxima = proxima;
                 proxima.Anterior = anterior;
 
                 this.TotalDeElementos--;
             }
-
-
         }
 
         public void RemoveDoComeco()
