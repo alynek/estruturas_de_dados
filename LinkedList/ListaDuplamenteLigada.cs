@@ -79,6 +79,24 @@ namespace LinkedList
 
         public void Remove(int posicao)
         {
+            if(!this.PosicaoOcupada(posicao)){
+                throw new ArgumentException("Posição não existe");
+            }
+
+            if(posicao == 0){
+                this.RemoveDoComeco();
+            }else if(posicao == this.TotalDeElementos - 1){
+                this.RemoveDoFim();
+            }else{
+                Celula<T> atual = this.PegaCelula(posicao - 1);
+                Celula<T> anterior = atual.Anterior;
+                Celula<T> proxima = atual.Proxima;
+                anterior.Proxima = proxima;
+                proxima.Anterior = anterior;
+
+                this.TotalDeElementos--;
+            }
+
 
         }
 
@@ -98,12 +116,12 @@ namespace LinkedList
 
         public void RemoveDoFim()
         {
-            if(this.PosicaoOcupada(0)){
+            if(!this.PosicaoOcupada(this.TotalDeElementos - 1)){
                 throw new ArgumentException("Posição não existe");
             }
 
             if(this.TotalDeElementos == 1){
-                RemoveDoComeco();
+                this.RemoveDoComeco();
             }
 
             else{
@@ -116,11 +134,19 @@ namespace LinkedList
 
         public int Tamanho()
         {
-            return 0;
+            return this.TotalDeElementos;
         }
 
         public bool Contem(T item)
         {
+            Celula<T> atual = this.Primeira;
+
+            while(atual != null){
+                if(atual.Elemento.Equals(item)){
+                    return true;
+                }
+                atual = atual.Proxima;
+            }
             return false;
         }
 
