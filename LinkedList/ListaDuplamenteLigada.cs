@@ -98,7 +98,20 @@ namespace LinkedList
 
         public void RemoveDoFim()
         {
+            if(this.PosicaoOcupada(0)){
+                throw new ArgumentException("Posição não existe");
+            }
 
+            if(this.TotalDeElementos == 1){
+                RemoveDoComeco();
+            }
+
+            else{
+                Celula<T> penultima = this.Ultima.Anterior;
+                penultima.Proxima = null;
+                this.Ultima = penultima;
+                this.TotalDeElementos --;
+            }
         }
 
         public int Tamanho()
