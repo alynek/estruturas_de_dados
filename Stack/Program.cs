@@ -12,7 +12,11 @@ namespace Stack
             nomes.Insere("Hermione");
 
             Console.WriteLine(nomes.ToString());
-            
+
+            System.Console.WriteLine("Último elemento removido: " + nomes.Remove());
+            Console.WriteLine(nomes.ToString());
+            System.Console.WriteLine("Último elemento removido: " + nomes.Remove());
+            Console.WriteLine(nomes.ToString());
         }
     }
 }
